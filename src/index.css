@@ -1,40 +1,66 @@
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url(https://images.unsplash.com/photo-1611457194403-d3aca4cf9d11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGFuaW1lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60);
+  color: white;
 }
 @media only screen and (max-width: 600px) {
-    .film-container {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
+  .film-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .pic {
+    width: 80vw;
+    cursor: pointer;
+    border: solid white 2px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    }
-    .pic {
-        width: 80vw;
-        padding: 1.5rem;
-        cursor: pointer;
-    }
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .cart-num {
-        background-color: red;
-        color: white;
-        padding: 0.6rem;
-        border-radius: 10px;
-        margin: 0.5rem;
-    }
+  .cart-num {
+    background-color: red;
+    color: white;
+    padding: 0.6rem;
+    border-radius: 10px;
+    margin: 0.5rem;
+  }
+  .cart-div {
+    background-color: black;
+    color: white;
+  }
+  .detailed-movie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .detailed-movie img {
+    width: 100vw;
+    padding: 1rem;
+  }
+  .detailed-movie p {
+    font-size: large;
+    padding: 1rem;
+  }
+  .hallo {
+    padding: 5rem;
+  }
 
-
-
-
-
-    
-
+  .cart-div {
+    padding: 3rem;
+  }
+}
+.hallo {
+  padding: 5rem;
+}
+.cart-div {
+  padding: 3rem;
 }
