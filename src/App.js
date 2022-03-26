@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Films from "./components/Films";
-import TheCart from "./components/TheCart";
+import SearchBox from "./components/SearchBox";
 import { AppContext } from "./contexts/AppContext";
 import Movie from "./components/Movie";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useParams } from "react-router-dom";
 
 function App() {
   const [films, setFilms] = useState([]);
   const [shoppingCartNumber, setShoppingCartNumber] = useState(0);
   const [cart, setCart] = useState([]);
+  const [visiableCart, setVisiableCart] = useState(false)
 
   useEffect(() => {
     fetch("https://ghibliapi.herokuapp.com/films/")
@@ -27,6 +27,8 @@ function App() {
         setShoppingCartNumber,
         cart,
         setCart,
+        visiableCart, 
+        setVisiableCart
       }}
     >
       <Router>
@@ -36,6 +38,7 @@ function App() {
             element={
               <>
                 <Header />
+                <SearchBox />
                 <Films />
               </>
             }

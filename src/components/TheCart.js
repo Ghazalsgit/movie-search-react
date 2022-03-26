@@ -1,22 +1,32 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
 
-function TheCart(props) {
-  const { films, setShoppingCartNumber, setCart, cart } =
-    useContext(AppContext);
+function TheCart() {
+  const { visiableCart, cart, setCart } = useContext(AppContext);
 
-  let show = false;
-  function toggleShow() {
-    show = !show;
+  function removeFromFavourites(id) {
+    const cloneCart = [...cart];
+    const indexOfItem = cloneCart.indexOf();
+
+    if (indexOfItem === -1) {
+      cloneCart.splice(id, 1);
+      setCart(cloneCart);
+    }
   }
-  //cart.splice(id, 1) för att ta bort från arrayen??
 
   return (
-    <div className="hallo" onClick={toggleShow}>
-      {show ? (
-        <div className="cart-div">
-          <h1>{props.cart.title}</h1>
-        </div>
+    <div className="hallo">
+      {visiableCart ? (
+        <>
+          {cart.map((film, index) => (
+            <li key={index}>
+              {film.title}
+              <button onClick={() => removeFromFavourites(index)}>
+                Remove
+              </button>
+            </li>
+          ))}
+        </>
       ) : null}
     </div>
   );

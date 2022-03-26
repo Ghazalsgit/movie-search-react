@@ -8,8 +8,17 @@ const Films = () => {
     useContext(AppContext);
 
   function addToCart(film) {
-    setShoppingCartNumber((prevCount) => prevCount + 1);
-    setCart([...cart, film]);
+    const indexOf = cart.indexOf(film);
+    let id = film.id;
+    const cloneCart = [...cart];
+
+    if (indexOf === -1) {
+      setShoppingCartNumber((prevCount) => prevCount + 1);
+      setCart([...cart, film]);
+    } else {
+      cloneCart.splice(id, 1);
+      setCart(cloneCart);
+    }
   }
   useEffect(() => {
     console.log(cart);
@@ -17,15 +26,17 @@ const Films = () => {
 
   const filmsData = films.map((film) => {
     return (
-      <div key={film.id}>
+      <div key={film.id} className="film-container">
+        <h3>{film.title}</h3>
         <img
           className="pic"
           src={film.image}
           alt="movie-pic"
           onClick={() => navigate(`/Movie/${film.id}`)}
         />
-        <h3>{film.title}</h3>
-        <button onClick={() => addToCart(film)}>Add to cart</button>
+        <button onClick={() => addToCart(film)}>
+          {cart.indexOf(film) ? "Like" : "Unlike"}
+        </button>
       </div>
     );
   });
