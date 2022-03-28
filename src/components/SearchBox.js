@@ -1,26 +1,48 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { AppContext } from "../contexts/AppContext";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import styles from "./SearchBox.css"
 
 
 function SearchBox() {
-  const { films, setFilms } = useContext(AppContext);
+  
+  const {
+    searchValue,
+    setSearchValue,
+    films,
+    setFilms,
+    filmsDefault,
+    setFilmsDefault,
+  } = useContext(AppContext);
 
-  function handleChange(event) {
-    const value = event.target.value;
+  function handleChange(theValue) {
+    let searched;
 
-    const theSearchedFilm = films.filter((film) => {
-      const theTitle = film.title;
-      if (theTitle.includes(value)) {
-        setFilms(theSearchedFilm);
-      }
-    });
+    setSearchValue(theValue);
+    if (theValue.length < 3) {
+      setFilms(filmsDefault);
+    } else {
+      searched = films.filter((data) => {
+        return data.title.toLowerCase().includes(searchValue.toLowerCase());
+      });
+
+      setFilms(searched);
+    }
   }
 
+  useEffect(() => {
+    console.log(films);
+  }, [films]);
+
   return (
-    <div className="search-box">
-      <input type="text" onChange={handleChange} placeholder={<FontAwesomeIcon icon={faSearch}/>} />
+    <div style={styles} className="search-box">
+      <FontAwesomeIcon icon={faSearch} style={{color:"white", padding:"13px", fontSize:"20px"}}/>
+      <input className="input-search"
+        type="text"
+        onChange={(e) => handleChange(e.target.value)}
+        placeholder="Search..."
+      />
       
     </div>
   );

@@ -1,0 +1,200 @@
+@media only screen and (max-width: 600px) {
+  .detailed-movie {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .title-movie {
+    padding: 1rem;
+    position: relative;
+    color: white;
+  }
+  .title-movie-2 {
+    color: white;
+    padding: 1rem;
+    position: relative;
+  }
+  .img-movie {
+    width: 100vw;
+    position: relative;
+  }
+  .example {
+    width: 100%;
+    position: relative;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.6) 25%,
+      rgba(0, 0, 0, 0.338) 50%,
+      rgba(0, 0, 0, 0) 75%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    opacity: 0.9;
+  }
+  .rotten,
+  .running {
+    color: rgb(139, 126, 126);
+    margin-left: 1rem;
+  }
+  .hello {
+    display: flex;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .director-movie {
+    margin-left: 1rem;
+    color: white;
+  }
+  .date-movie {
+    margin-left: 1rem;
+    color: white;
+  }
+  .description-movie {
+    padding: 1rem;
+    font-weight: 900;
+    color: white;
+  }
+  .button-movie {
+    width: 40%;
+    height: 50px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(251, 180, 2);
+    font-size: larger;
+    border: 1px solid rgb(251, 180, 2);
+    border-radius: 4px;
+  }
+  .hllo {
+    display: flex;
+    justify-content: space-around;
+  }
+  .go-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 0.3rem;
+    background-color: rgb(0, 0, 0);
+    border-radius: 4px;
+    font-weight: 900;
+    width: 20%;
+    z-index: 9;
+    top: 10px;
+    left: 10px;
+    position: absolute;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .detailed-movie {
+    border: solid 1px white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .title-movie {
+    position: absolute;
+    margin-left: 1rem;
+    top: 65%;
+    color: white;
+    font-size: 80px;
+    margin-bottom: 3rem;
+    
+  }
+  .title-movie-2 {
+    position: absolute;
+    top:75%;
+    margin-left: 1rem;
+    color: white;
+    font-size: 80px;
+    margin-top: 2rem;
+  }
+  .img-movie {
+    width: 100vw;
+    position: relative;
+  }
+  .example {
+    width: 100%;
+    position: relative;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.9) 25%,
+      rgba(0, 0, 0, 0.338) 50%,
+      rgba(0, 0, 0, 0) 75%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    opacity: 0.9;
+  }
+  .rotten,
+  .running {
+    color: rgb(139, 126, 126);
+    margin-left: 1rem;
+    font-size: 25px;
+  }
+  .hello {
+    display: flex;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 20px;
+  }
+  .director-movie {
+    margin-left: 1rem;
+    color: white;
+  }
+  .date-movie {
+    margin-left: 1rem;
+    color: white;
+  }
+  .description-movie {
+    padding: 1rem;
+    font-weight: 900;
+    color: white;
+    font-size: 20px;
+  }
+  .button-movie {
+    width: 40%;
+    height: 50px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(251, 180, 2);
+    font-size: larger;
+    border: 1px solid rgb(251, 180, 2);
+    border-radius: 4px;
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+  }
+  .hllo {
+    display: flex;
+    justify-content: space-around;
+  }
+  .go-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 0.3rem;
+    background-color: rgb(0, 0, 0);
+    border-radius: 4px;
+    font-weight: 900;
+    z-index: 9;
+    top: 10px;
+    left: 10px;
+    position: absolute;
+  }
+}

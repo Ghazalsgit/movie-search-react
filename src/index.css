@@ -3,79 +3,9 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Playfair Display", serif;
-}
-
-@media only screen and (max-width: 600px) {
-  .film-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .pic {
-    width: 80vw;
-    cursor: pointer;
-    border: solid white 2px;
-  }
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 8rem;
-    background-image: url(https://images.unsplash.com/photo-1580477667929-3ef27c684b7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
-    background-size: cover; 
-  }
   
-  .title {
-    font-size: 1.5rem;
-    color: white;
-  }
-  .search-box {
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-    background-size: contain;
-   
-  }
-  .search-box input {
-    padding: 0.7rem;
-    width: 250px;
-  }
-  .cart-num {
-    background-color: rgb(252, 210, 177);
-    color: rgb(255, 116, 2);
-    padding: 0.6rem;
-    border-radius: 10px;
-    margin: 0.9rem;
-    font-size: small;
-  }
-  .film-container {
-    display: flex;
-    flex-direction: column;
-  }
-  .film-container button {
-    color:chocolate;
-    margin: 1rem;
-    height: 30px;
-    padding-right: 30px;
-    padding-left: 30px;
-  }
-
-  .detailed-movie {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .detailed-movie img {
-    width: 100vw;
-    padding: 1rem;
-  }
-  .detailed-movie p {
-    font-size: large;
-    padding: 1rem;
-  }
-  .cart-div {
-    padding: 3rem;
-  }
 }
+body {
+  background-color: black;
+}
+

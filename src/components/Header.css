@@ -1,0 +1,59 @@
+@media only screen and (max-width: 600px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 20rem;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 1)
+      ),
+      url("https://i.pinimg.com/564x/f7/3d/75/f73d756d03edf810056b40d7e0e484b1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .title {
+    font-size: 2rem;
+    color: white;
+  }
+  .cart-num {
+    background-color: rgb(251, 180, 2);
+    color: black;
+    padding: 0.6rem;
+    border-radius: 10px;
+    margin: 0.9rem;
+    font-size: small;
+  }
+  .cart {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50vw;
+  }
+  .list-item {
+    width: 100vw;
+    left: 0;
+    right: 0;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 25rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
+      url("https://i.pinimg.com/originals/4c/bb/98/4cbb982940f46069475e6a1d5765fd1b.gif");
+    background-size: cover;
+    background-position-y: center;
+    background-repeat: no-repeat;
+  }
+  .title {
+    color: white;
+    font-size: 5rem;
+    margin-top: 1rem;
+    margin-left: .5rem;
+  }
+ 
+}

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
 import TheCart from "./TheCart";
+import styles from "./Header.css";
 
 const Header = () => {
   const { cart, visiableCart, setVisiableCart } = useContext(AppContext);
@@ -10,8 +11,9 @@ const Header = () => {
   }
 
   return (
-    <div className="header">
-      <h1 className="title">Studio Ghibli Movies</h1>
+    <div style={styles} className="header">
+      <h1 className="title">Ghibli Movies</h1>
+
       <section className="cart">
         <h3 onClick={toggle} className="cart-num">
           {cart.length} liked {cart.length === 1 ? "movie" : "movies"}

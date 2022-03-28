@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
+import styles from "./theCart.css";
 
 function TheCart() {
   const { visiableCart, cart, setCart } = useContext(AppContext);
@@ -7,7 +8,6 @@ function TheCart() {
   function removeFromFavourites(id) {
     const cloneCart = [...cart];
     const indexOfItem = cloneCart.indexOf();
-
     if (indexOfItem === -1) {
       cloneCart.splice(id, 1);
       setCart(cloneCart);
@@ -15,16 +15,21 @@ function TheCart() {
   }
 
   return (
-    <div className="hallo">
+    <div style={styles} className="the-cart">
       {visiableCart ? (
         <>
           {cart.map((film, index) => (
-            <li key={index}>
-              {film.title}
-              <button onClick={() => removeFromFavourites(index)}>
-                Remove
-              </button>
-            </li>
+            <div >
+              <li className="list-item" key={index}>
+                {film.title}
+                <button
+                  className="the-cart-button"
+                  onClick={() => removeFromFavourites(index)}
+                >
+                  Remove
+                </button>
+              </li>
+            </div>
           ))}
         </>
       ) : null}

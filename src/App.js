@@ -10,12 +10,18 @@ function App() {
   const [films, setFilms] = useState([]);
   const [shoppingCartNumber, setShoppingCartNumber] = useState(0);
   const [cart, setCart] = useState([]);
-  const [visiableCart, setVisiableCart] = useState(false)
+  const [visiableCart, setVisiableCart] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+  const [filmsDefault, setFilmsDefault] = useState([]);
+  console.log(searchValue);
 
   useEffect(() => {
     fetch("https://ghibliapi.herokuapp.com/films/")
       .then((data) => data.json())
-      .then((data) => setFilms(data));
+      .then((data) => {
+        setFilms(data);
+        setFilmsDefault(data);
+      });
   }, []);
 
   return (
@@ -27,8 +33,12 @@ function App() {
         setShoppingCartNumber,
         cart,
         setCart,
-        visiableCart, 
-        setVisiableCart
+        visiableCart,
+        setVisiableCart,
+        searchValue,
+        setSearchValue,
+        setFilmsDefault,
+        filmsDefault,
       }}
     >
       <Router>
@@ -47,7 +57,6 @@ function App() {
             path="/movie/:id"
             element={
               <>
-                <Header />
                 <Movie />
               </>
             }

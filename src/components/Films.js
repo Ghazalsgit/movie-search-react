@@ -1,20 +1,21 @@
 import { useContext, useEffect } from "react";
 import { AppContext } from "../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
+import styles from "./Films.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 const Films = () => {
   let navigate = useNavigate();
-  const { films, setShoppingCartNumber, setCart, cart } =
-    useContext(AppContext);
+  const { films, setCart, cart } = useContext(AppContext);
 
   function addToCart(film) {
-    const indexOf = cart.indexOf(film);
     let id = film.id;
     const cloneCart = [...cart];
+    const indexOf = cloneCart.indexOf(film);
 
     if (indexOf === -1) {
-      setShoppingCartNumber((prevCount) => prevCount + 1);
-      setCart([...cart, film]);
+      setCart([...cloneCart, film]);
     } else {
       cloneCart.splice(id, 1);
       setCart(cloneCart);
@@ -26,17 +27,26 @@ const Films = () => {
 
   const filmsData = films.map((film) => {
     return (
-      <div key={film.id} className="film-container">
-        <h3>{film.title}</h3>
-        <img
-          className="pic"
-          src={film.image}
-          alt="movie-pic"
-          onClick={() => navigate(`/Movie/${film.id}`)}
-        />
-        <button onClick={() => addToCart(film)}>
-          {cart.indexOf(film) ? "Like" : "Unlike"}
-        </button>
+      <div style={styles} key={film.id} className="film-container-small">
+        <div className="all-films">
+          <div className="container">
+            <img
+              className="pic-film"
+              src={film.image}
+              alt="movie-pic"
+              onClick={() => navigate(`/Movie/${film.id}`)}
+            />
+            <button className="btn"><FontAwesomeIcon style={{color:"black"}} onClick={() => navigate(`/Movie/${film.id}`)} icon={faPlay}/></button>
+          </div>
+          <div className="info-film">
+            <h3 className="title-film">{film.title}</h3>
+            <h4 className="info-film-detail">Year: {film.release_date}</h4>
+            <h4 className="info-film-detail">Director: {film.director}</h4>
+            <button className="button-film" onClick={() => addToCart(film)}>
+              {cart.indexOf(film) ? "Save" : "Unsave"}
+            </button>
+          </div>
+        </div>
       </div>
     );
   });
