@@ -4,11 +4,10 @@ import TheCart from "./TheCart";
 import styles from "./Header.css";
 
 const Header = () => {
-  const { cart, visiableCart, setVisiableCart } = useContext(AppContext);
+  const { cart, visibleCart, setVisibleCart } = useContext(AppContext);
 
   function toggle() {
-    setVisiableCart((prevState) => !prevState);
-    
+    setVisibleCart((prevState) => !prevState);
   }
 
   return (
@@ -18,7 +17,7 @@ const Header = () => {
         <h3 onClick={toggle} className="cart-num">
           {cart.length} liked {cart.length === 1 ? "movie" : "movies"}
         </h3>
-        {visiableCart ? <TheCart /> : null}
+        {visibleCart ? <TheCart /> : null}
       </section>
     </div>
   );

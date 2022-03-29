@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 const Films = () => {
-  const [finnsRedan, setFinnsRedan] = useState(false);
   let navigate = useNavigate();
   const { films, setCart, cart } = useContext(AppContext);
 
@@ -14,15 +13,13 @@ const Films = () => {
     let id = film.id;
     const cloneCart = [...cart];
     const indexOf = cart.indexOf(film);
-    console.log(indexOf);
 
     if (indexOf === -1) {
-      setFinnsRedan((prevState) => !prevState);
       setCart([...cloneCart, film]);
-      localStorage.setItem("film", JSON.stringify(film.title))
+      localStorage.setItem("film", JSON.stringify(film.title));
     } else {
-      const filtered = cart.filter(el => el.id !== id)
-      setCart(filtered)
+      const filtered = cart.filter((el) => el.id !== id);
+      setCart(filtered);
       localStorage.removeItem("film");
     }
   }

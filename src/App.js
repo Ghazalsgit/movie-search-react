@@ -10,7 +10,7 @@ function App() {
   const [films, setFilms] = useState([]);
   const [shoppingCartNumber, setShoppingCartNumber] = useState(0);
   const [cart, setCart] = useState([]);
-  const [visiableCart, setVisiableCart] = useState(false);
+  const [visibleCart, setVisibleCart] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [filmsDefault, setFilmsDefault] = useState([]);
   console.log(searchValue);
@@ -33,8 +33,8 @@ function App() {
         setShoppingCartNumber,
         cart,
         setCart,
-        visiableCart,
-        setVisiableCart,
+        visibleCart,
+        setVisibleCart,
         searchValue,
         setSearchValue,
         setFilmsDefault,

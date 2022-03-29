@@ -3,7 +3,7 @@ import { AppContext } from "../contexts/AppContext";
 import styles from "./theCart.css";
 
 function TheCart() {
-  const { visiableCart, cart, setCart } = useContext(AppContext);
+  const { visibleCart, cart, setCart } = useContext(AppContext);
 
   function removeFromFavourites(id) {
     const cloneCart = [...cart];
@@ -17,7 +17,7 @@ function TheCart() {
 
   return (
     <div style={styles} className="the-cart">
-      {visiableCart ? (
+      {visibleCart ? (
         <>
           {cart.map((film, index) => (
             <div>
