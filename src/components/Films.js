@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
 import styles from "./Films.css";
@@ -6,19 +6,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 const Films = () => {
+  const [finnsRedan, setFinnsRedan] = useState(false);
   let navigate = useNavigate();
   const { films, setCart, cart } = useContext(AppContext);
 
   function addToCart(film) {
     let id = film.id;
     const cloneCart = [...cart];
-    const indexOf = cloneCart.indexOf(film);
+    const indexOf = cart.indexOf(film);
+    console.log(indexOf);
 
     if (indexOf === -1) {
+      setFinnsRedan((prevState) => !prevState);
       setCart([...cloneCart, film]);
+      localStorage.setItem("film", JSON.stringify(film.title))
     } else {
-      cloneCart.splice(id, 1);
-      setCart(cloneCart);
+      const filtered = cart.filter(el => el.id !== id)
+      setCart(filtered)
+      localStorage.removeItem("film");
     }
   }
   useEffect(() => {
@@ -36,14 +41,20 @@ const Films = () => {
               alt="movie-pic"
               onClick={() => navigate(`/Movie/${film.id}`)}
             />
-            <button className="btn"><FontAwesomeIcon style={{color:"black"}} onClick={() => navigate(`/Movie/${film.id}`)} icon={faPlay}/></button>
+            <button className="btn">
+              <FontAwesomeIcon
+                style={{ color: "black" }}
+                onClick={() => navigate(`/Movie/${film.id}`)}
+                icon={faPlay}
+              />
+            </button>
           </div>
           <div className="info-film">
             <h3 className="title-film">{film.title}</h3>
             <h4 className="info-film-detail">Year: {film.release_date}</h4>
             <h4 className="info-film-detail">Director: {film.director}</h4>
             <button className="button-film" onClick={() => addToCart(film)}>
-              {cart.indexOf(film) ? "Save" : "Unsave"}
+              {cart.indexOf(film) === -1 ? "Save" : "Unsave"}
             </button>
           </div>
         </div>

@@ -37,11 +37,11 @@ function SearchBox() {
 
   return (
     <div style={styles} className="search-box">
-      <FontAwesomeIcon icon={faSearch} style={{color:"white", padding:"13px", fontSize:"20px"}}/>
+      
       <input className="input-search"
         type="text"
         onChange={(e) => handleChange(e.target.value)}
-        placeholder="Search..."
+        placeholder="&#128270;  Search..."
       />
       
     </div>

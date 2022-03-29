@@ -9,6 +9,7 @@ function TheCart() {
     const cloneCart = [...cart];
     const indexOfItem = cloneCart.indexOf();
     if (indexOfItem === -1) {
+      localStorage.removeItem("film");
       cloneCart.splice(id, 1);
       setCart(cloneCart);
     }
@@ -19,7 +20,7 @@ function TheCart() {
       {visiableCart ? (
         <>
           {cart.map((film, index) => (
-            <div >
+            <div>
               <li className="list-item" key={index}>
                 {film.title}
                 <button

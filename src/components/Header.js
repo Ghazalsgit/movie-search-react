@@ -8,12 +8,12 @@ const Header = () => {
 
   function toggle() {
     setVisiableCart((prevState) => !prevState);
+    
   }
 
   return (
     <div style={styles} className="header">
       <h1 className="title">Ghibli Movies</h1>
-
       <section className="cart">
         <h3 onClick={toggle} className="cart-num">
           {cart.length} liked {cart.length === 1 ? "movie" : "movies"}
