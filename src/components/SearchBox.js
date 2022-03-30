@@ -37,7 +37,6 @@ function SearchBox() {
 
   return (
     <div style={styles} className="search-box">
-      
       <input className="input-search"
         type="text"
         onChange={(e) => handleChange(e.target.value)}

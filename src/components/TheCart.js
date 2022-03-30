@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
 import styles from "./theCart.css";
+import { Link } from "react-router-dom";
 
 function TheCart() {
   const { visibleCart, cart, setCart } = useContext(AppContext);
@@ -21,15 +22,15 @@ function TheCart() {
         <>
           {cart.map((film, index) => (
             <div>
-              <li className="list-item" key={index}>
-                {film.title}
+              <p className="list-item" key={index}>
+                <Link to={`/Movie/${film.id}`}>{film.title}</Link>
                 <button
                   className="the-cart-button"
                   onClick={() => removeFromFavourites(index)}
                 >
                   Remove
                 </button>
-              </li>
+              </p>
             </div>
           ))}
         </>

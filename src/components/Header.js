@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
 import TheCart from "./TheCart";
 import styles from "./Header.css";
+import img from "../img/output-onlinepngtools.png";
 
 const Header = () => {
   const { cart, visibleCart, setVisibleCart } = useContext(AppContext);
@@ -12,7 +13,7 @@ const Header = () => {
 
   return (
     <div style={styles} className="header">
-      <h1 className="title">Ghibli Movies</h1>
+      <img src={img} className="iiimgg" />
       <section className="cart">
         <h3 onClick={toggle} className="cart-num">
           {cart.length} liked {cart.length === 1 ? "movie" : "movies"}
