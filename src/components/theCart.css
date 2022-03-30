@@ -3,7 +3,7 @@
         position: fixed;
         top:0;
         right:0;
-        max-width: 100%;
+        width: 100%;
         background-color: rgb(251, 180, 2);
         z-index: 5;
     }
