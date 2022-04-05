@@ -16,7 +16,7 @@ const Films = () => {
 
     if (indexOf === -1) {
       setCart([...cloneCart, film]);
-      localStorage.setItem("film", JSON.stringify(film.title));
+      localStorage.setItem("film", JSON.stringify(film)); //funkar inte just nu
     } else {
       const filtered = cart.filter((el) => el.id !== id);
       setCart(filtered);

@@ -14,7 +14,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
     border: 4px solid rgba(95, 89, 89, 0.482);
     background-color: rgba(73, 71, 71, 0.366);
     border-radius: 25px;
@@ -33,6 +32,11 @@
     font-size: larger;
     border: 1px solid rgb(251, 180, 2);
     border-radius: 4px;
+  }
+  .info-film {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
   .info-film-detail {
     color: rgb(145, 144, 144);

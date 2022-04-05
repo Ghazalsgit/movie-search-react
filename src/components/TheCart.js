@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 function TheCart() {
   const { visibleCart, cart, setCart } = useContext(AppContext);
 
-  function removeFromFavourites(id) {
+  function removeFromSaves(id) {
     const cloneCart = [...cart];
     const indexOfItem = cloneCart.indexOf();
     if (indexOfItem === -1) {
-      localStorage.removeItem("film");
+      localStorage.removeItem("films"); 
       cloneCart.splice(id, 1);
       setCart(cloneCart);
     }
@@ -26,7 +26,7 @@ function TheCart() {
                 <Link to={`/Movie/${film.id}`}>{film.title}</Link>
                 <button
                   className="the-cart-button"
-                  onClick={() => removeFromFavourites(index)}
+                  onClick={() => removeFromSaves(index)}
                 >
                   Remove
                 </button>
