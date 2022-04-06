@@ -82,8 +82,6 @@
   }
   .all-films {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     border: 4px solid rgba(95, 89, 89, 0.482);
     background-color: rgba(73, 71, 71, 0.366);
     border-radius: 25px;
@@ -94,7 +92,7 @@
     margin-top: 1rem;
   }
   .title-film {
-    font-size: 50px;
+    font-size: 30px;
     margin: 1rem;
   }
   .button-film {
@@ -117,7 +115,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    flex-wrap: wrap;
   }
 
   .container {
