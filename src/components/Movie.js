@@ -26,9 +26,11 @@ function Movie() {
     if (film.id === id) {
       return (
         <div key={film.id} style={styles} className="detailed-movie">
-          <div className="go-back" onClick={() => navigate("/")}>Go back</div>
+          <div className="go-back" onClick={() => navigate("/")}>
+            Go back
+          </div>
           <div className="example">
-            <img className="img-movie" src={film.movie_banner} />
+            <img className="img-movie" src={film.movie_banner} alt="" />
             <div className="overlay"></div>
           </div>
           <h1 className="title-movie">{film.title}</h1>

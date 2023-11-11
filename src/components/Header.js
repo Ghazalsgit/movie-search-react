@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <div style={styles} className="header">
-      <img src={img} className="iiimgg" />
+      <img src={img} className="iiimgg" alt="ghibli" />
       <section className="cart">
         <h3 onClick={toggle} className="cart-num">
           {cart.length} liked {cart.length === 1 ? "movie" : "movies"}

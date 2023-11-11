@@ -16,7 +16,7 @@ function App() {
   console.log(searchValue);
 
   useEffect(() => {
-    fetch("https://ghibliapi.herokuapp.com/films/")
+    fetch("https://ghibliapi.vercel.app/films/")
       .then((data) => data.json())
       .then((data) => {
         setFilms(data);
